@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+double c_to_kelwin(int);
+
+int main()
+{
+    char name[30] = { "Rob" };                                                              //deklaracaja zmiennych
+    char answer[20];
+    unsigned int battery = 50, velocity = 15;
+    int temperature = -30, max_battery = 100, min_battery = 0, min_temp = -50, max_temp = 80, min_vel = 0, max_vel = 45;
+    const char* status[] = { "Exploring","Sampling","Returning", "Idle" };
+
+    printf("Hello! \nWhat do you want to display?\n");                              //komunikaty dla uzytkownika
+    printf("1.Name \n2.Battery \n3.Temperature \n4.Velocity \n5.Status\n6.Kelwins (Return value in kelwin's degrees)\n");
+    printf("7.Info\n");
+    printf("Please enter the name of operation\n");
+
+    scanf_s("%s", &answer, sizeof(answer));                                            //odpowiedz usera
+
+
+
+    if (strcmp(answer, "Name") == 0)                                                //instrukcje do wyswietlania userowi
+    {
+        printf("\nName of the robot is: %s\n", name);
+        printf("\nEnter new name:");
+        scanf_s("%s", name, sizeof(name));
+        printf("\nName of the robot is: %s\n", name);
+
+    }
+    else if (strcmp(answer, "Battery") == 0)
+    {
+        printf("\nThe battery status is: %d%%\n", battery);
+        printf("\nEnter new battery status:");
+        scanf_s("%u", &battery);
+        printf("\nThe battery status is: %d%%\n", battery);
+    }
+    else if (strcmp(answer, "Temperature") == 0)
+    {
+        printf("\nThe temperature is: %d*C\n", temperature);
+        printf("\nEnter new temperature :");
+        scanf_s("%d", &temperature);
+        printf("\nThe temperature is: %d*C\n", temperature);
+    }
+    else if (strcmp(answer, "Velocity") == 0)
+    {
+        printf("\nThe Velocity is: %dkm/h\n", velocity);
+        printf("\nVelocity in scientific notation = %e\n", velocity);
+        printf("\nEnter new velocity value:");
+        scanf_s("%u", &velocity);
+        printf("\nThe Velocity is: %dkm/h\n", velocity);
+        printf("\nVelocity in scientific notation = %e\n", velocity);
+    }
+    else if (strcmp(answer, "Status") == 0)
+    {
+        int status_val = 0;
+        printf("\nThe Status is: %s\n", status[0]);
+        printf("Availeable statuses: 0 = Exploring, 1 = Sampling, 2 = Returning, 3 = Idle ");
+        printf("\nEnter new status:  ");
+        scanf_s("%d", &status_val);
+        printf("\nThe Status is: %s\n", status[status_val]);
+
+    }
+    else if (strcmp(answer, "Kelwins") == 0)
+    {
+        c_to_kelwin(temperature);
+
+    }
+    else if (strcmp(answer, "Info") == 0)                               //Info o zmiennych
+    {
+        int abs_temp = abs(temperature);
+        printf("\nThe size of temperature is: %d bytes\n", sizeof(temperature));
+        printf("\nThe size of velocity is: %d bytes\n", sizeof(velocity));
+        printf("\nThe size of name is: %d bytes\n", sizeof(name));
+        printf("\nThe size of status is: %d bytes\n", sizeof(status));
+        printf("\nMax value of temperature is: %d *C\n", max_temp);
+        printf("\nMin value of temperature is: %d *C\n", min_temp);
+        printf("\nMax value of velocity is: %d *C\n", max_temp);
+        printf("\nMin value of velocity is: %d *C\n", min_temp);
+        printf("\nValue of temperature is: %d *C absolute value of temperature is: %d *C \n", temperature, abs_temp);
+
+
+    }
+}
+double c_to_kelwin(int temperature)                                            //funkja zamienia stopnie celcjusza na kelwiny
+{
+    double kelwin_temp = 0;
+    kelwin_temp = temperature + 273.15;
+
+    printf("\nThe temperature in Celcius is: %d*C but in Kelwins is: %lf*K\n", temperature, kelwin_temp);
+
+};
