@@ -1,0 +1,244 @@
+#include <stdio.h>
+
+int main()
+{
+	int choice = 0, choice_2 = 0;
+
+	printf("Hello!\n");
+	printf("Please choose one pattern:\n");
+	printf("1 - Rectangle\n");
+	printf("2 - Triangle\n");
+	printf("3 - Pairs of 'X' and 'o'\n");
+	printf("4 - Rectangle of X'es and o's inside of it\n");
+	printf("5 - Rectangle of X'es and o's inside of it and X'es on diagonals\n");
+	printf("6 - Diamond pattern\n");
+	printf("7 - Chess pattern\n");
+	printf("8 - 'Frame inside a frame'\n");
+
+	scanf_s("%d", &choice);
+
+	switch (choice)
+	{
+	case 1:
+	{
+		int quantity = 0;
+
+		printf("Enter quantity of X: ");
+		scanf_s("\n%d", &quantity);
+
+		for (int i = 1; i <= quantity; i++)
+		{
+			for (int k = 1; k <= quantity; k++)
+			{
+				printf("X");
+
+			}
+			printf("\n");
+
+		}
+
+		break;
+
+
+
+	}
+	case 2:
+	{
+		int quantity = 0;
+
+		printf("Enter number of X: ");
+		scanf_s("%d", &quantity);
+
+		for (int i = 1; i <= quantity; i++)
+		{
+			for (int j = i; j >= 1; j--)
+			{
+				printf("X");
+			}
+
+			printf("\n");
+		}
+
+		break;
+	}
+	case 3:
+	{
+
+		int quantity = 0;
+
+		printf("Enter quantity of Xo: ");
+		scanf_s("%d", &quantity);
+
+		for (int i = 1; i <= quantity; i++)
+		{
+
+			if (i % 2 == 1)
+			{
+
+
+				for (int k = 1; k <= quantity; k++)
+				{
+
+					printf("Xo");
+
+				}
+
+			}
+			else
+
+				for (int k = 1; k <= quantity; k++)
+				{
+
+					printf("oX");
+
+				}
+
+			printf("\n");
+
+		}
+
+		break;
+
+	}
+	case 4:
+	{
+		int quantity = 0;
+
+		printf("Enter number of rows: ");
+		scanf_s("%d", &quantity);
+
+		for (int i = 1; i <= quantity; i++)
+		{
+			for (int j = 1; j <= quantity; j++)
+			{
+				if (i == 1 || i == quantity || j == 1 || j == quantity)
+				{
+					printf("X");
+				}
+				else
+				{
+					printf("o");
+				}
+			}
+
+			printf("\n");
+
+
+			
+		}
+		break;
+	}
+	case 5:
+	{
+		int quantity = 0;
+
+		printf("Enter number of rows: ");
+		scanf_s("%d", &quantity);
+
+		for (int i = 1; i <= quantity; i++)
+		{
+			for (int j = 1; j <= quantity; j++)
+			{
+				if (i == 1 || i == quantity || j == 1 || j == quantity || i == j || j == (quantity - i + 1))
+					printf("X");
+				else
+					printf("o");
+			}
+			printf("\n");
+		}
+		break;
+
+	}
+	case 6:
+	{
+		int quantity = 0;
+		printf("Enter number of rows: ");
+		scanf_s("%d", &quantity);
+
+		for (int i = 1; i <= quantity; i++)
+		{
+			for (int j = i; j <= quantity; j++)
+			{
+				printf("X");
+			}
+
+			for (int j = 1; j <= (2 * i - 2); j++)
+			{
+				printf("o");
+			}
+
+			for (int j = i; j <= quantity; j++)
+			{
+				printf("X");
+			}
+
+			printf("\n");
+		}
+
+		
+		for (int i = 1; i <= quantity; i++)
+		{
+			for (int j = 1; j <= i; j++)
+			{
+				printf("X");
+			}
+
+			for (int j = (2 * i - 2); j < (2 * quantity - 2); j++)
+			{
+				printf("o");
+			}
+
+			for (int j = 1; j <= i; j++)
+			{
+				printf("X");
+			}
+
+			printf("\n");
+		}
+
+
+
+		break;
+
+
+	}
+	case 7:
+
+	{
+			
+		int quantity = 0;
+
+		printf("Enter quantity of Xo: ");
+		scanf_s("%d", &quantity);
+
+		for (int i = 1; i <= quantity; i++)
+		{
+
+			if (i % 2 == 1)
+			{
+				for (int k = 1; k <= quantity; k++)
+				{
+					printf("oooXXX");
+				}
+
+			}
+			else
+
+				for (int k = 1; k <= quantity; k++)
+				{
+					printf("XXXooo");
+				}
+			printf("\n");
+
+		}
+
+		break;
+
+	}
+	default:
+
+		printf("Error! Invalid number!");
+	}
+
+	}
+
