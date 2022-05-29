@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <conio.h>
+
+void guess_word(char[]);
+
+int main()
+{
+	int k = 0;
+	char ch;
+	char word[20];
+	int length = 0;
+
+	printf("Hello!");
+	printf("\nPlease enter word to guess (only small letters): ");
+
+	while ((ch = _getch()) != 13) {
+		word[k] = ch;
+		k++;
+	}
+		word[k] = '\0';
+	
+	printf("Word to guess is: ");
+
+	for (int i = 0; i < k; i++) 
+	{
+		printf("*");
+	}
+
+	for (int i = 0; i < sizeof(word); i++)
+	{
+		char x = word[i];
+
+		if (x != '\0'){
+
+			length++;
+		}
+		else{
+
+			break;
+		}
+
+	}
+	printf("\nWord cointains %d charcters.", length);
+	printf("\nLet's try to guess it!");
+
+}
+
+void guess_word(char[]) {
+
+
+
+}
