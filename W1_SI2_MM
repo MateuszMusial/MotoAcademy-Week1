@@ -1,0 +1,101 @@
+#include <stdio.h>
+
+
+int main()
+{
+    int choice;
+    double dim_a, dim_b, dim_c, dim_d, height;
+    const double pi = 3.14;
+    
+
+    printf("Hello! \nPlease choose what figure do You have: \n");
+    printf("1 - Circle \n");
+    printf("2 - Rectangle \n");
+    printf("3 - Triangle \n");
+    printf("4 - Trapeze \n");
+
+    scanf_s("%d", &choice);
+    
+    switch (choice)
+    {
+    case 1:
+        {
+        double radius = 0;
+
+        printf("Please enter the radius lenght: \n");
+        scanf_s("%lf \n", &radius);
+
+        double perimeter = 2 * radius * pi;
+        double field = radius * radius * pi;
+
+        printf("Perimeter of your circle is: %4.2lf \n", perimeter);
+        printf("Field of your circle is: %4.2lf", field);
+
+        break;
+        }
+    case 2:
+        {
+
+
+        printf("Please enter first side lenght: \n");
+        scanf_s("%lf \n", &dim_a);
+        printf("Please enter second side lenght: \n");
+        scanf_s("%lf \n", &dim_b);
+        
+        double perimeter = 2 * dim_a + 2* dim_b;
+        double field = dim_a * dim_a;
+
+        printf("Perimetr of your rectangle is: %4.2lf \n", perimeter);
+        printf("Field of your rectangle is: %4.2lf \n", field);
+
+        break;
+        }
+    case 3:
+        {
+
+        printf("Please enter first side (at the bottom) lenght: \n");
+        scanf_s("%lf \n", &dim_a);
+        printf("Please enter second side lenght: \n");
+        scanf_s("%lf \n", &dim_b);
+        printf("Please enter third side lenght: \n");
+        scanf_s("%lf \n", &dim_c);
+        printf("Please enter the height lenght: \n");
+        scanf_s("%lf \n", &height);
+
+        long double perimeter = dim_a + dim_b + dim_c;
+        long double field = (dim_a * height) / 2.0;
+
+        printf("Perimetr of your triangle is: %4.2lf \n", perimeter);
+        printf("Field of your triange is: %4.2lf \n", field);
+
+        break;
+        }
+    case 4:
+        {
+      
+        printf("Please enter the bottom side lenght: \n");
+        scanf_s("%lf \n", &dim_a);
+        printf("Please enter the upper side lenght: \n");
+        scanf_s("%lf \n", &dim_b);
+        printf("Please enter the left side lenght: \n");
+        scanf_s("%lf \n", &dim_c);
+        printf("Please enter the right side lenght: \n");
+        scanf_s("%lf \n", &dim_d);
+        printf("Please enter the height lenght: \n");
+        scanf_s("%lf \n", &height);
+
+        long double perimeter = dim_a + dim_b + dim_c + dim_d;
+        long double field = (dim_a + dim_b) * height / 2.0;
+
+        printf("Perimetr of your trapeze is: %4.2lf \n", perimeter);
+        printf("Field of your trapeze is: %4.2lf \n", field);
+
+        break;
+
+        }
+    default:
+        printf("Error! Invalid number.");
+    }
+
+
+}
