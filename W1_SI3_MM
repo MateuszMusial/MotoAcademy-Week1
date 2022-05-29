@@ -1,0 +1,226 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int choice = 0, choice_2 = 0;
+	double avarage;
+	double grades[10];
+
+	printf("Hello! ");
+	printf("What do You want to do?\n");
+	printf("1 - Calculate avaerage of student grades\n");
+	printf("2 - Check whether student is eligible to get scholarship\n");
+	printf("3 - See list of the students and them's info\n");
+
+	scanf_s("%d", &choice);
+
+
+	switch (choice)
+	{
+	case 1:
+	{
+		double sum = 0;
+
+		for (int i = 0; i < 7; ++i)
+		{
+			printf("Enter student's %d grade (in %%): ", i + 1);
+			scanf_s("%lf", &grades[i]);
+			sum += grades[i];
+			
+		}
+		avarage = sum / 7.0;
+		printf("\nThe avarage of student's grades is: %4.2lf%%\n", avarage);
+
+		if (avarage < 50) 
+		{
+			printf("It's grade F.");
+		}
+		else if (avarage >= 50.1 && avarage <= 60)
+		{
+			printf("It's grade E.");
+		}
+		else if (avarage >= 60.1 && avarage <= 70)
+		{
+			printf("It's grade D.");
+		}
+		else if (avarage >= 70.1 && avarage <= 80)
+		{
+			printf("It's grade C.");
+		}
+		else if (avarage >= 80.1 && avarage <= 90)
+		{
+			printf("It's grade B.");
+		}
+		else if (avarage >= 90.1 && avarage <= 100)
+		{
+			printf("It's grade A.");
+		}
+		break;
+	}
+	case 2:
+	{
+		double sum = 0;
+
+		for (int i = 0; i < 3; ++i)
+		{
+			printf("Enter student's three best grades (in %%): ");
+			printf("Enter %d grade (in %%): ", i + 1);
+			scanf_s("%lf", &grades[i]);
+			sum += grades[i];
+
+		}
+		avarage = sum / 3.0;
+
+		if (avarage > 95)
+		{
+			printf("\nStudent is elegible to get scholarship.");
+		}
+		else
+		{
+			printf("\nStudent isn't eligible to get scholarship.");
+		}
+
+		break;
+	}
+	case 3:
+	{
+
+		printf("PLease choose one option: ");
+		printf("\n(1) Harper Eland");
+		printf("\n(2) Celement Hayes");
+		printf("\n(3) Belinsa Jacobs");
+		printf("\n(4) Cedric Santos");
+		printf("\n(5) Fiona Wilcher");
+		printf("\n(6) Stats\n");
+		scanf_s("%d", &choice_2);
+
+		switch (choice_2)
+		{
+			case 1:
+			{
+			
+				double st1_grades[] = {98, 87.8, 55.7, 44, 71, 77.8, 66};
+				double st1_avg = (st1_grades[0] + st1_grades[1] + st1_grades[2] + st1_grades[3] + st1_grades[4] + st1_grades[5] + st1_grades[6]) / 7.0;
+
+				printf("Name:Harper Eland\n");
+				printf("Student's grades (in %%):  \n");
+
+				for (int loop = 0; loop < 7; loop++)
+				{
+					printf("%4.2lf,  ", st1_grades[loop]);
+
+				}
+
+				printf("Average: %4.2lf %%\n", st1_avg);
+				printf("Student isn't eligible to get scholarship.");
+
+
+				break;
+			}
+			case 2:
+			{
+				double st2_grades[] = { 11.4, 65, 55.7, 23.2, 13, 4, 46.9 };
+				double st2_avg = (st2_grades[0] + st2_grades[1] + st2_grades[2] + st2_grades[3] + st2_grades[4] + st2_grades[5] + st2_grades[6]) / 7.0;
+
+				printf("Name:Celement Hayes\n");
+				printf("Student's grades (in %%):  \n");
+
+				for (int loop = 0; loop < 7; loop++)
+				{
+					printf("%4.2lf,  ", st2_grades[loop]);
+
+				}
+
+				printf("Average: %4.2lf %%\n", st2_avg);
+				printf("Student isn't eligible to get scholarship.");
+
+
+				break;
+			}
+
+			case 3:
+			{
+				double st3_grades[] = { 98, 87.8, 100, 99.5, 96, 77.8, 66 };
+				double st3_avg = (st3_grades[0] + st3_grades[1] + st3_grades[2] + st3_grades[3] + st3_grades[4] + st3_grades[5] + st3_grades[6]) / 7.0;
+
+				printf("Name:Belinsa Jacobs\n");
+				printf("Student's grades (in %%):  \n");
+
+				for (int loop = 0; loop < 7; loop++)
+				{
+					printf("%4.2lf,  ", st3_grades[loop]);
+
+				}
+
+				printf("Average: %4.2lf %%\n", st3_avg);
+				printf("Student is eligible to get scholarship.");
+
+				break;
+			}
+
+			case 4:
+			{
+				double st4_grades[] = { 98, 99, 100, 100, 100, 25.5, 99.4 };
+				double st4_avg = (st4_grades[0] + st4_grades[1] + st4_grades[2] + st4_grades[3] + st4_grades[4] + st4_grades[5] + st4_grades[6]) / 7.0;
+
+				printf("Name:Cedric Santos\n");
+				printf("Student's grades (in %%):  \n");
+
+				for (int loop = 0; loop < 7; loop++)
+				{
+					printf("%4.2lf,  ", st4_grades[loop]);
+
+				}
+
+				printf("Average: %4.2lf %%\n", st4_avg);
+				printf("Student is eligible to get scholarship.");
+
+
+				break;
+			}
+
+			case 5:
+			{
+				double st5_grades[] = { 76.9, 87.8, 55.7, 44, 32.1, 43.8, 66 };
+				double st5_avg = (st5_grades[0] + st5_grades[1] + st5_grades[2] + st5_grades[3] + st5_grades[4] + st5_grades[5] + st5_grades[6]) / 7.0;
+
+				printf("Name:Fiona Wilcher\n");
+				printf("Student's grades (in %%):  \n");
+
+				for (int loop = 0; loop < 7; loop++)
+				{
+					printf("%4.2lf,  ", st5_grades[loop]);
+
+				}
+
+				printf("Average: %4.2lf %%\n", st5_avg);
+				printf("Student isn't eligible to get scholarship.");
+
+				break;
+			}
+
+			case 6:
+			{
+				printf("Numbers of students eligible to get scholarship: 2 \n");
+				printf(" Avarage Math's grade is: 60,78%%, Highest grade is 98%%, Lowest grade is 11.4%% \n");
+				printf(" Avarage English's grade is: 85,48%%, Highest grade is 99%%, Lowest grade is 65%% \n");
+				printf(" Avarage Biology's grade is: 68.86%%, Highest grade is 100%%, Lowest grade is 55.7%% \n");
+				printf(" Avarage Phisic's grade is: 62.14%%, Highest grade is 100%%, Lowest grade is 23.2%% \n");
+				printf(" Avarage Geography's grade is: 62.42%%, Highest grade is 100%%, Lowest grade is 13%% \n");
+				printf(" Avarage Informatics's grade is: 45,78%%, Highest grade is 77.8%%, Lowest grade is 4%% \n");
+				printf(" Avarage PE's grade is: 68,86%%, Highest grade is 99.4%%, Lowest grade is 46.9%% \n");
+
+
+				break;
+			}
+			
+
+
+			}
+			
+		}
+	
+
+	}
+}
